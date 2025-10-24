@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/example1.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.postimg.cc/example2.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Thermal Pet Blanket Customization",
+    "providerName": "WarmPaws Tailor House",
+    "providerEmail": "service@warmpaws.com",
+    "price": 18,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Soft and insulated pet blankets designed to retain body heat during cold nights.",
+    "image": "https://i.postimg.cc/example3.png",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Dog Winter Boot Fitting",
+    "providerName": "SnowySteps Pet Shop",
+    "providerEmail": "contact@snowysteps.com",
+    "price": 22,
+    "rating": 4.6,
+    "slotsAvailable": 2,
+    "description": "Waterproof and anti-slip winter boot fitting to protect paws from frostbite and ice burns.",
+    "image": "https://i.postimg.cc/example4.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Seasonal Health Check & Vitamin Plan",
+    "providerName": "HealthyTails Veterinary Care",
+    "providerEmail": "care@healthytailsvet.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Winter health assessment with personalized supplements to boost immunity.",
+    "image": "https://i.postimg.cc/example5.png",
+    "category": "Healthcare"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Warm Indoor Pet Playground Session",
+    "providerName": "HappyFur Activity Center",
+    "providerEmail": "play@happyfurcenter.com",
+    "price": 15,
+    "rating": 4.5,
+    "slotsAvailable": 8,
+    "description": "Safe, temperature-controlled play area to keep pets active during cold weather.",
+    "image": "https://i.postimg.cc/example6.png",
+    "category": "Activity"
+  }
+]
