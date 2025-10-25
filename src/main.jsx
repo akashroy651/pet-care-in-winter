@@ -46,11 +46,11 @@ const router = createBrowserRouter([
       },
       
       {
-        path:'/services',
+        path:'services',
         Component: Services,
       },
       {
-        path: '/Profile',
+        path: 'Profile',
         Component: Profile,
       }
     ]

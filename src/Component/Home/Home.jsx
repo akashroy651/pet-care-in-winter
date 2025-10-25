@@ -1,15 +1,26 @@
-import React from "react";
-import img from "../../assets/pet.jpeg";
+import React, { Suspense } from "react";
+// import img from "../../assets/pet.jpeg";
 import petCareData from "../JsonData/petCare.json";
 import galleryData from '../JsonData/galleryData.json'
 import { NavLink } from "react-router";
+
+
+
+
+const Slider = React.lazy(() => import("./Slider"));
+
 
 
 const Home = () => {
   return (
     <div>
       <h1>hi this home</h1>
-      {/* // "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)", */}
+    <div>
+      <Suspense fallback={<p className="text-center py-10">Loading Slider   <span className="loading loading-spinner loading-xl"></span></p>}>
+        <Slider></Slider>
+      </Suspense>
+    </div>
+      {/* // "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
       <div
         className="hero min-h-screen"
         style={{
@@ -29,8 +40,13 @@ const Home = () => {
            </NavLink>
           </div>
         </div>
-      </div>
+      </div> */}
 
+
+    
+
+
+                       {/*  our section */}    
       <section>
         <div>
           <h1 className="text-2xl font-bold mb-4">Our Services</h1>
