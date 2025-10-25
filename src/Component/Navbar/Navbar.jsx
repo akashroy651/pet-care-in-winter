@@ -2,6 +2,7 @@ import React from "react";
 import img from '../../assets/logo.png'
 import { NavLink } from "react-router";
 import { FaPaw } from "react-icons/fa";
+import '../../Component/Navbar/Navbar.css'
 
 
 
@@ -52,7 +53,7 @@ const Navbar = () => {
          <NavLink to="/">
            <a className="btn btn-ghost text-xl">
             <img src={img} className="w-12 bg-amber-400" alt="" />
-            <p>PawHub</p>
+            <p className="text-black">Pet Care</p>
           </a>
          </NavLink>
 

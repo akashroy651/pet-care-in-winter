@@ -30,7 +30,8 @@ import Root from './layouts/root.jsx';
 import Navbar from './Component/Navbar/Navbar.jsx';
 import Home from './Component/Home/Home.jsx';
 import Services from './Component/Services/Services.jsx';
-import Profile from './Component/Profile.jsx';
+import Profile from './Component/Profile/Profile.jsx';
+
 
 
 
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
         Component: Services,
       },
       {
-        path: '/profile',
+        path: '/Profile',
         Component: Profile,
       }
     ]
