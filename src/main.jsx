@@ -31,6 +31,7 @@ import Navbar from './Component/Navbar/Navbar.jsx';
 import Home from './Component/Home/Home.jsx';
 import Services from './Component/Services/Services.jsx';
 import Profile from './Component/Profile/Profile.jsx';
+import ServicesDetails from './Component/ServicesDetails/ServiceDetails.jsx';
 
 
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path:'services',
         Component: Services,
+      },
+      {
+        path: 'services/:id',
+        Component: ServicesDetails,
       },
       {
         path: 'Profile',
