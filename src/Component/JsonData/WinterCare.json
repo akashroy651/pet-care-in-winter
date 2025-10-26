@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Keep Your Pet Warm",
+    "description": "Provide a warm and cozy sleeping area for your pet, away from cold floors and direct drafts. Use soft blankets or bedding to help them stay warm. Small or short-haired pets may need sweaters during colder days."
+  },
+  {
+    "id": 2,
+    "title": "Dry Properly After Bath",
+    "description": "After giving your pet a bath in winter, make sure to dry them thoroughly. Wet fur reduces body temperature and increases the risk of cold, coughing, and infections. Use a towel or low-heat dryer if needed."
+  },
+  {
+    "id": 3,
+    "title": "Take Care of Paw Pads",
+    "description": "Cold weather can cause dryness and cracks on your pet’s paw pads. Apply pet-safe paw balm or a small amount of coconut oil to keep them soft and protected. Avoid taking pets out on extremely cold surfaces."
+  },
+  {
+    "id": 4,
+    "title": "Ensure Proper Hydration",
+    "description": "Pets tend to drink less water during winter, which can lead to dehydration. Offer fresh water multiple times a day and check their bowl regularly. Proper hydration is essential for maintaining body temperature and overall health."
+  }
+]

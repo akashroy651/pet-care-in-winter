@@ -1,7 +1,7 @@
 import React from "react";
 import img from '../../assets/logo.png'
 import { NavLink } from "react-router";
-import { FaPaw } from "react-icons/fa";
+
 import '../../Component/Navbar/Navbar.css'
 
 
@@ -80,7 +80,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn"><FaPaw></FaPaw>Contact Us</a>
+         
+          <button className="btn">Log In</button>
+          <button className="btn">Log Out</button>
         </div>
       </div>
     </div>

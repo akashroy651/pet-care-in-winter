@@ -14,6 +14,9 @@
 
 
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 
 import { StrictMode } from 'react'
@@ -32,15 +35,19 @@ import Home from './Component/Home/Home.jsx';
 import Services from './Component/Services/Services.jsx';
 import Profile from './Component/Profile/Profile.jsx';
 import ServicesDetails from './Component/ServicesDetails/ServiceDetails.jsx';
+import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
 
 
 
 
 const router = createBrowserRouter([
   {
+     
     path: '/',
     Component: Root,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
+       
       {
         index: true,
         Component: Home 
@@ -57,7 +64,7 @@ const router = createBrowserRouter([
       {
         path: 'Profile',
         Component: Profile,
-      }
+      },
     ]
 
   }
@@ -66,6 +73,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
+      <ToastContainer position="top-center" autoClose={2000} />
     <RouterProvider router={router}></RouterProvider>
   </StrictMode>,
 )

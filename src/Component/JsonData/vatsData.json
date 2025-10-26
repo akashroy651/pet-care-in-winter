@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Ayesha Rahman",
+    "qualification": "DVM, Pet Nutrition & Wellness Specialist",
+    "experience": "6+ Years",
+    "description": "Dr. Ayesha is known for her gentle approach and nutrition expertise. She creates personalized diet plans to improve overall pet health and immunity."
+  },
+  {
+    "id": 2,
+    "name": "Dr. Farhan Ahmed",
+    "qualification": "DVM, Surgery & Orthopedic Treatment",
+    "experience": "8+ Years",
+    "description": "Dr. Farhan has successfully performed numerous complex surgeries. His precise techniques and calm nature help pets recover faster and safely."
+  },
+  {
+    "id": 3,
+    "name": "Dr. Nusrat Jahan",
+    "qualification": "DVM, Skin & Allergy Care Specialist",
+    "experience": "5+ Years",
+    "description": "Dr. Nusrat focuses on treating skin infections, fur loss, seasonal allergies, and long-term dermatological issues with modern treatment methods."
+  },
+  {
+    "id": 4,
+    "name": "Dr. Rifat Hasan",
+    "qualification": "DVM, Pet Behavior & Training Consultant",
+    "experience": "7+ Years",
+    "description": "Dr. Rifat helps pets overcome anxiety, aggression, and behavior issues. He guides pet owners to build trust, emotional bonding, and discipline."
+  },
+  {
+    "id": 5,
+    "name": "Dr. Tamanna Karim",
+    "qualification": "DVM, Vaccination & Preventive Healthcare",
+    "experience": "4+ Years",
+    "description": "Dr. Tamanna emphasizes prevention-first care. She ensures timely vaccination schedules, parasite control plans, and general pet health routine checkups."
+  },
+  {
+    "id": 6,
+    "name": "Dr. Mehedi Hasan",
+    "qualification": "DVM, Emergency & Critical Care",
+    "experience": "9+ Years",
+    "description": "Dr. Mehedi handles emergency cases with quick and effective decision-making. He specializes in critical treatment and life-saving pet care support."
+  }
+]
