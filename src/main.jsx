@@ -36,6 +36,7 @@ import Services from './Component/Services/Services.jsx';
 import Profile from './Component/Profile/Profile.jsx';
 import ServicesDetails from './Component/ServicesDetails/ServiceDetails.jsx';
 import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
+import AuthProvider from "./AuthProvider.jsx";
 
 
 
@@ -72,9 +73,11 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App /> */}
+    <AuthProvider>
+            {/* <App /> */}
       <ToastContainer position="top-center" autoClose={2000} />
     <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </StrictMode>,
 )
 

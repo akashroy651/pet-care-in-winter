@@ -68,7 +68,7 @@ const Home = () => {
                   to={`/services/${service.serviceId}`}
                   key={service.serviceId}
                 >
-                  <button className="btn">View details</button>
+                  <button className="btn mt-2">View details</button>
                 </Link>
               </div>
             ))}

@@ -26,9 +26,9 @@ const ServiceDetails = () => {
 
       <button
         onClick={() => setShowModal(true)}
-        className="px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition"
+        className="px-4 py-2 mt-4 bg-orange-600 text-white rounded hover:bg-orange-700"
       >
-        Book Service
+        Book Service →
       </button>
       <br />
       {/* Back Button */}
