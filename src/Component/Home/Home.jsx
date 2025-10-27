@@ -10,6 +10,7 @@ import VetsData from "../Page/VetsData/VetsData";
 const Slider = React.lazy(() => import("./Slider"));
 
 const Home = () => {
+  
   return (
     <div>
       <h1>hi this home</h1>

@@ -6,17 +6,17 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDaXQFK98C4b7f86qax32ycN8oRBL1e7Fk",
-  authDomain: "email-password-auth-f5737.firebaseapp.com",
-  projectId: "email-password-auth-f5737",
-  storageBucket: "email-password-auth-f5737.firebasestorage.app",
-  messagingSenderId: "695272730297",
-  appId: "1:695272730297:web:5460772c0f2ff882ec3568"
+  apiKey: "AIzaSyDygBAQLBGk3qwLP4AKfWxD6fGnEYb6ohQ",
+  authDomain: "pet-care-in-winter-a48b0.firebaseapp.com",
+  projectId: "pet-care-in-winter-a48b0",
+ storageBucket: "pet-care-in-winter-a48b0.appspot.com",
+
+  messagingSenderId: "432794932237",
+  appId: "1:432794932237:web:27d07f37d6ee3067457144"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 
 // Initialize Firebase Authentication and get a reference to the service
 export const auth = getAuth(app);
