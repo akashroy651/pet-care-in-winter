@@ -1,16 +1,13 @@
-import React from 'react';
-import petCareData from '../JsonData/petCare.json'
-import { Link } from 'react-router';
+import React from "react";
+import petCareData from "../JsonData/petCare.json";
+import { Link } from "react-router";
 
 const Services = () => {
-    return (
+  return (
+    <div>
+      <section>
         <div>
-            <h1>hello services man</h1>
-
-                 <section>
-                      <div>
           <h1 className="text-2xl font-bold mb-4">Our Services</h1>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {petCareData.map((service) => (
               <div className="p-4 border rounded-lg shadow hover:shadow-lg hover:scale-105 transition">
@@ -32,9 +29,9 @@ const Services = () => {
             ))}
           </div>
         </div>
-                    </section>
-        </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default Services;

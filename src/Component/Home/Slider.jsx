@@ -1,38 +1,3 @@
-// import React from "react";
-// import img from "../../assets/pet.jpeg";
-
-// const Home = () => {
-//   return (
-//     <div>
-//       <h1>hi this home</h1>
-//       {/* // "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)", */}
-//       <div
-//         className="hero min-h-screen"
-//         style={{
-//           backgroundImage: `url(${img})`,
-//         }}
-//       >
-//         <div className="hero-overlay"></div>
-//         <div className="hero-content text-neutral-content text-center">
-//           <div className="max-w-md">
-//             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-//             <p className="mb-5">
-//               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-//               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-//               et a id nisi.
-//             </p>
-//             <button className="btn btn-primary">Get Started</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Home;
-
-
-
 
 
 
@@ -59,7 +24,6 @@ const Slider = () => {
       >
         <SwiperSlide>
           <img
-            // src="https://picsum.photos/800/400?1"
             src={img1}
             loading="lazy"
             alt="slide 1"
@@ -69,7 +33,6 @@ const Slider = () => {
 
         <SwiperSlide>
           <img
-            // src="https://picsum.photos/800/400?2"
             src={img2}
             loading="lazy"
             alt="slide 2"
@@ -79,7 +42,6 @@ const Slider = () => {
 
         <SwiperSlide>
           <img
-            // src="https://picsum.photos/800/400?3"
               src={img3}
             loading="lazy"
             alt="slide 3"

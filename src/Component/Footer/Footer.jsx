@@ -12,8 +12,7 @@ const Footer = () => {
 
   return (
     <div>
-      <h1>hello iam footer </h1>
-      <footer className="w-full border-t p-6 mt-8">
+      <footer className="w-full border-t p-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
           <div>
             <h4 className="font-bold text-lg mb-1">Contact</h4>
@@ -25,18 +24,14 @@ const Footer = () => {
             <div className="flex justify-center md:justify-start gap-4">
               <a
                 onClick={facebookClick}
-             
                 className="hover:underline"
-              
                 rel="noreferrer"
               >
                 Facebook
               </a>
               <a
                 onClick={twitterClick}
-               
                 className="hover:underline"
-               
                 rel="noreferrer"
               >
                 Twitter
@@ -44,9 +39,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
-            <Link to="/privacy" className="hover:underline font-medium">
+          <div className="flex justify-end">
+            <Link
+              to=""
+              className="font-medium text-right"
+            >
               Privacy Policy
+              <p className="text-sm text-gray-500 mt-1 hover:underline w-80">
+                “We respect your privacy and will never share your personal
+                information with third parties.”
+              </p>
             </Link>
           </div>
         </div>

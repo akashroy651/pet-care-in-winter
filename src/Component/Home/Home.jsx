@@ -13,7 +13,7 @@ const Home = () => {
   
   return (
     <div>
-      <h1>hi this home</h1>
+    
       <div>
         <Suspense
           fallback={
@@ -26,28 +26,7 @@ const Home = () => {
           <Slider></Slider>
         </Suspense>
       </div>
-      {/* // "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: `url(${img})`,
-        }}
-      >
-        <div className="hero-overlay"></div>
-        <div className="hero-content text-neutral-content text-center">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">We Help your pet survive the winter</h1>
-            <p className="mb-5">
-              Your furry friends deserve the best care.
-              Learn how proper care impacts your pet's overall well-being and longevity
-            </p>
-           <NavLink to="/services">
-             <button className="btn btn-primary hover:bg-blue-950">Our Services</button>
-           </NavLink>
-          </div>
-        </div>
-      </div> */}
-
+    
       {/*  our section */}
 
       <section>
@@ -83,15 +62,9 @@ const Home = () => {
         <div>
           <div className="py-14 bg-gradient-to-b from-pink-50 to-white">
             <div className="text-center mb-10">
-              <p className="text-sm font-bold text-rose-500 tracking-wide uppercase">
-                Favorite Pets
-              </p>
               <h2 className="text-4xl font-extrabold text-gray-800">
                 Our Gallery
               </h2>
-              <p className="text-gray-600 mt-1">
-                Get ready for furr-mily hugs!
-              </p>
             </div>
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">

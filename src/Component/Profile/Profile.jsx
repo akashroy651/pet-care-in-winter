@@ -1,124 +1,103 @@
-// import React from "react";
-// import img from '../../assets/resize.jpg'
 
 
-// const Profile = () => {
-//   return (
-//     <div>
-     
-//       <div className="hero bg-base-200 min-h-screen">
-//         <div className="hero-content flex-col lg:flex-row">
-//           <img
-//             // src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-//             src={img}
-//             className="max-w-sm rounded-lg shadow-2xl"
-//           />
-//           <div>
-//             <h1 className="text-5xl font-bold">Box Office News!</h1>
-//             <p className="py-6">
-//               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-//               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-//               et a id nisi.
-//             </p>
-//             <button className="btn btn-primary">Get Started</button>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Profile;
-
-
-
-
-
-
-
-
-
-
-// import React from "react";
-// // তুমি চাইলে নিজের image path use করতে পারো, নচেৎ user.photoURL ব্যবহার হবে
-// import img from '../../assets/resize.jpg'; 
-
-// const Profile = ({ user }) => {
-//   if (!user) {
-//     return (
-//       <div className="flex items-center justify-center min-h-screen">
-//         <p className="text-xl font-semibold">Please login first</p>
-//       </div>
-//     );
-//   }
-
-//   return (
-//     <div className="hero bg-base-200 min-h-screen">
-//       <div className="hero-content flex-col lg:flex-row gap-10">
-//         {/* User photo */}
-//         <img
-//           src={user.photoURL || img} // Firebase user photo অথবা fallback image
-//           className="max-w-sm rounded-lg shadow-2xl"
-//           alt="User Avatar"
-//         />
-
-//         {/* User info */}
-//         <div>
-//           <h1 className="text-5xl font-bold">{user.displayName}</h1>
-//           <p className="py-4 text-lg text-gray-700">{user.email}</p>
-//           <button
-//             className="btn btn-primary"
-//             onClick={() => alert("Update Profile coming soon!")}
-//           >
-//             Update Profile
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Profile;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from "react";
-import img from "../../assets/resize.jpg"; // তুমি চাইলে অন্য image path দিতে পারো
+import React, { useState } from "react";
+import defaultAvatar from "../../assets/resize.jpg";
 
 const Profile = () => {
-  // Static random data
-  const user = {
-    displayName: "John Doe",
-    email: "johndoe@example.com",
-    photoURL: img,
+  // Default user info
+  const [userProfile, setUserProfile] = useState({
+    fullName: "Akash Roy",
+    emailAddress: "akashroy@example.com",
+    avatar: defaultAvatar,
+  });
+
+  // Editing mode
+  const [editing, setEditing] = useState(false);
+
+  // Form inputs (empty when edit starts)
+  const [inputData, setInputData] = useState({
+    fullName: "",
+    emailAddress: "",
+    avatar: "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputData({ ...inputData, [name]: value });
+
+    // Live preview in profile card
+    setUserProfile((prev) => ({ ...prev, [name]: value || prev[name] }));
+  };
+
+  // Save updated profile
+  const saveProfile = () => {
+    setUserProfile({ ...userProfile, ...inputData });
+    setInputData({ fullName: "", emailAddress: "", avatar: "" }); // Clear form
+    setEditing(false);
+    alert("Your profile has been updated 🎉");
+  };
+
+  // Start editing
+  const startEditing = () => {
+    setInputData({ fullName: "", emailAddress: "", avatar: "" }); // Clear inputs
+    setEditing(true);
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-6 bg-base-200 p-6">
+      {/* Profile Card */}
       <img
-        src={user.photoURL}
-        alt="User Avatar"
+        src={userProfile.avatar}
+        alt="Profile Avatar"
         className="w-32 h-32 rounded-full border-2 border-amber-500 shadow-lg"
       />
-      <h1 className="text-3xl font-bold">{user.displayName}</h1>
-      <p className="text-gray-700 text-lg">{user.email}</p>
-      <button
-        className="btn btn-primary"
-        onClick={() => alert("Upload Profile coming soon!")}
-      >
-        Upload Profile
-      </button>
+      <h1 className="text-3xl font-bold">{userProfile.fullName}</h1>
+      <p className="text-gray-700 text-lg">{userProfile.emailAddress}</p>
+
+      {!editing ? (
+        <button className="btn btn-primary" onClick={startEditing}>
+          Update Profile
+        </button>
+      ) : (
+        <div className="flex flex-col gap-3 w-80 mt-4">
+          <input
+            type="text"
+            name="fullName"
+            value={inputData.fullName}
+            onChange={handleInputChange}
+            placeholder="Enter Full Name"
+            className="input input-bordered w-full"
+          />
+          <input
+            type="email"
+            name="emailAddress"
+            value={inputData.emailAddress}
+            onChange={handleInputChange}
+            placeholder="Enter Email"
+            className="input input-bordered w-full"
+          />
+          <input
+            type="text"
+            name="avatar"
+            value={inputData.avatar}
+            onChange={handleInputChange}
+            placeholder="Enter Photo URL"
+            className="input input-bordered w-full"
+          />
+          <div className="flex gap-2 mt-2">
+            <button className="btn btn-success flex-1" onClick={saveProfile}>
+              Save
+            </button>
+            <button
+              className="btn btn-outline flex-1"
+              onClick={() => setEditing(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
