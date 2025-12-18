@@ -1,9 +1,9 @@
-import { createContext, useEffect, useState } from "react";
+import {  createContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase/firebase.init"; // তোমার firebase init path
 
-// 1️⃣ Context create
-export const AuthContext = createContext();
+// // 1️⃣ Context create
+ export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -34,6 +34,9 @@ const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={value}>
       {children}
     </AuthContext.Provider>
+    //  <AuthContext value={value}>
+    //         {children}
+    //     </AuthContext>
   );
 };
 

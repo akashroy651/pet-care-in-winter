@@ -42,7 +42,7 @@ const Footer = () => {
           <div className="flex justify-end">
             <Link
               to=""
-              className="font-medium text-right"
+              className="font-medium text-center"
             >
               Privacy Policy
               <p className="text-sm text-gray-500 mt-1 hover:underline w-80">

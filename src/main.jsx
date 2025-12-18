@@ -37,8 +37,9 @@ import Profile from './Component/Profile/Profile.jsx';
 import ServicesDetails from './Component/ServicesDetails/ServiceDetails.jsx';
 import ErrorPage from './Component/ErrorPage/ErrorPage.jsx';
 import AuthProvider from "./AuthProvider.jsx";
-
-
+import Login from "./Component/Login/Login.jsx"
+import Register from "./Component/Register/Register.jsx"
+import PrivateRoute from "./Routes/PrivateRoute.jsx";
 
 
 const router = createBrowserRouter([
@@ -60,12 +61,22 @@ const router = createBrowserRouter([
       },
       {
         path: 'services/:id',
-        Component: ServicesDetails,
+        element: <PrivateRoute><ServicesDetails></ServicesDetails></PrivateRoute>
       },
       {
         path: 'Profile',
-        Component: Profile,
+        element: <PrivateRoute><Profile></Profile></PrivateRoute>
       },
+      {
+        path: 'login',
+        Component: Login,
+      },
+      {
+        path: 'register',
+        Component: Register,
+      },
+
+
     ]
 
   }

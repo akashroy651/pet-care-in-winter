@@ -35,7 +35,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {petCareData.map((service) => (
-              <div className="p-4 border rounded-lg shadow hover:shadow-lg hover:scale-105 transition">
+              <div key={service.serviceId} className="p-4 border rounded-lg shadow hover:shadow-lg hover:scale-105 transition">
                 <h2 className="text-xl font-semibold">{service.serviceName}</h2>
                 <p className="text-gray-600">
                   Provider: {service.providerName}

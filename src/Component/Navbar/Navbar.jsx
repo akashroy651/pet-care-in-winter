@@ -2,12 +2,28 @@
 
 import '../../Component/Navbar/Navbar.css'
 import img from '../../assets/logo.png';
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider';
+
 
 const Navbar = () => {
+   
 
+    const { user,  logOut } = useContext(AuthContext);
+    console.log('user check', user)
+ 
+    const handleLogOut = ()  => {
+      logOut()
+      .then(() => {
+        console.log('LogOut Successfully')
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+    }
 
   return (
     <div className="navbar bg-base-100 shadow-sm px-4 ">
@@ -50,8 +66,17 @@ const Navbar = () => {
 
       {/* Navbar login button */}
       <div className="navbar-end">
-      <GoogleLogin></GoogleLogin>
         
+        {
+          user ? 
+            <button onClick={handleLogOut} className='btn'>Logout</button>
+            :
+            <Link to="/login">
+            <button className=" btn">Login</button>
+            </Link>
+            
+        }
+    
       </div>
  
        

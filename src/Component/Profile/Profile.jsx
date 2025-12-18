@@ -1,59 +1,69 @@
 
-
-import React, { useState } from "react";
-import defaultAvatar from "../../assets/resize.jpg";
+import React, { useContext, useState, useEffect } from "react";
+import { AuthContext } from "../../AuthProvider"; 
+import { updateProfile } from "firebase/auth";
 
 const Profile = () => {
-  // Default user info
-  const [userProfile, setUserProfile] = useState({
-    fullName: "Akash Roy",
-    emailAddress: "akashroy@example.com",
-    avatar: defaultAvatar,
-  });
-
-  // Editing mode
+  const { user } = useContext(AuthContext); // Logged-in user
   const [editing, setEditing] = useState(false);
-
-  // Form inputs (empty when edit starts)
   const [inputData, setInputData] = useState({
-    fullName: "",
-    emailAddress: "",
-    avatar: "",
+    displayName: "",
+    photoURL: "",
+  });
+  const [profileData, setProfileData] = useState({
+    displayName: "Guest User",
+    email: "",
+    photoURL: "",
   });
 
-  // Handle input changes
+  // Load user data when component mounts or user changes
+  useEffect(() => {
+    if (user) {
+      setProfileData({
+        displayName: user.displayName || "Anonymous",
+        email: user.email,
+        photoURL: user.photoURL || "https://via.placeholder.com/150",
+      });
+    }
+  }, [user]);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setInputData({ ...inputData, [name]: value });
-
-    // Live preview in profile card
-    setUserProfile((prev) => ({ ...prev, [name]: value || prev[name] }));
+    setInputData((prev) => ({ ...prev, [name]: value }));
+    setProfileData((prev) => ({ ...prev, [name]: value || prev[name] }));
   };
 
-  // Save updated profile
   const saveProfile = () => {
-    setUserProfile({ ...userProfile, ...inputData });
-    setInputData({ fullName: "", emailAddress: "", avatar: "" }); // Clear form
-    setEditing(false);
-    alert("Your profile has been updated 🎉");
+    if (!user) return;
+
+    // Update Firebase user profile
+    updateProfile(user, {
+      displayName: inputData.displayName || user.displayName,
+      photoURL: inputData.photoURL || user.photoURL,
+    })
+      .then(() => {
+        alert("Profile updated successfully!");
+        setEditing(false);
+      })
+      .catch((err) => {
+        alert("Error updating profile: " + err.message);
+      });
   };
 
-  // Start editing
   const startEditing = () => {
-    setInputData({ fullName: "", emailAddress: "", avatar: "" }); // Clear inputs
+    setInputData({ displayName: "", photoURL: "" }); // Clear inputs
     setEditing(true);
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-6 bg-base-200 p-6">
-      {/* Profile Card */}
       <img
-        src={userProfile.avatar}
+        src={profileData.photoURL}
         alt="Profile Avatar"
         className="w-32 h-32 rounded-full border-2 border-amber-500 shadow-lg"
       />
-      <h1 className="text-3xl font-bold">{userProfile.fullName}</h1>
-      <p className="text-gray-700 text-lg">{userProfile.emailAddress}</p>
+      <h1 className="text-3xl font-bold">{profileData.displayName}</h1>
+      <p className="text-gray-700 text-lg">{profileData.email}</p>
 
       {!editing ? (
         <button className="btn btn-primary" onClick={startEditing}>
@@ -63,24 +73,16 @@ const Profile = () => {
         <div className="flex flex-col gap-3 w-80 mt-4">
           <input
             type="text"
-            name="fullName"
-            value={inputData.fullName}
+            name="displayName"
+            value={inputData.displayName}
             onChange={handleInputChange}
             placeholder="Enter Full Name"
             className="input input-bordered w-full"
           />
           <input
-            type="email"
-            name="emailAddress"
-            value={inputData.emailAddress}
-            onChange={handleInputChange}
-            placeholder="Enter Email"
-            className="input input-bordered w-full"
-          />
-          <input
             type="text"
-            name="avatar"
-            value={inputData.avatar}
+            name="photoURL"
+            value={inputData.photoURL}
             onChange={handleInputChange}
             placeholder="Enter Photo URL"
             className="input input-bordered w-full"
@@ -103,4 +105,3 @@ const Profile = () => {
 };
 
 export default Profile;
-
