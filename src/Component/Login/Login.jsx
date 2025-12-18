@@ -32,8 +32,8 @@ const Login = () => {
       .then((result) => {
         if (!result.user.emailVerified) {
           setError("Please verify your email before login");
-          setShowResend(true); // show resend button
-          return; // stop login
+          setShowResend(true); 
+          return; 
         }
 
         setSuccess("Login successful!",toast.success("Login successful!"));
@@ -78,7 +78,7 @@ const Login = () => {
       auth,
       email,
       prompt("Enter your password to resend verification")
-    ) // temporarily ask password
+    ) 
       .then((userCredential) => {
         sendEmailVerification(userCredential.user)
           .then(() => {

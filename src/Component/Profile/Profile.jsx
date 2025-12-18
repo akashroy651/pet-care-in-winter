@@ -4,7 +4,8 @@ import { AuthContext } from "../../AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Profile = () => {
-  const { user } = useContext(AuthContext); // Logged-in user
+  const { user } = useContext(AuthContext); 
+
   const [editing, setEditing] = useState(false);
   const [inputData, setInputData] = useState({
     displayName: "",
@@ -16,7 +17,7 @@ const Profile = () => {
     photoURL: "",
   });
 
-  // Load user data when component mounts or user changes
+
   useEffect(() => {
     if (user) {
       setProfileData({
@@ -51,7 +52,7 @@ const Profile = () => {
   };
 
   const startEditing = () => {
-    setInputData({ displayName: "", photoURL: "" }); // Clear inputs
+    setInputData({ displayName: "", photoURL: "" }); 
     setEditing(true);
   };
 

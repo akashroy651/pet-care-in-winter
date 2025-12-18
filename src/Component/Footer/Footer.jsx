@@ -41,7 +41,6 @@ const Footer = () => {
 
           <div className="flex justify-end">
             <Link
-              to=""
               className="font-medium text-center"
             >
               Privacy Policy
