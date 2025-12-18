@@ -4,8 +4,9 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import React, { useRef, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { auth } from "../../firebase/firebase.init";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -14,6 +15,9 @@ const Login = () => {
   const emailRef = useRef();
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,11 +36,12 @@ const Login = () => {
           return; // stop login
         }
 
-        setSuccess("Login successful!");
+        setSuccess("Login successful!",toast.success("Login successful!"));
         setError("");
         setShowResend(false);
         console.log("Login success", result.user);
-        navigate('/')
+
+       navigate(from, { replace: true }); 
 
       })
       .catch((err) => {
@@ -86,7 +91,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="card bg-base-100 m-auto w-full max-w-sm shrink-0 shadow-2xl">
+      <div className="card bg-base-100 m-auto w-full max-w-sm shrink-0 shadow-2xl mt-6 mb-10">
         <div className="card-body">
           <h1 className="text-4xl font-bold">Login now!</h1>
           <form onSubmit={handleLogin}>

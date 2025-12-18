@@ -36,7 +36,7 @@ const Profile = () => {
   const saveProfile = () => {
     if (!user) return;
 
-    // Update Firebase user profile
+    // Update Firebase user profile  <//
     updateProfile(user, {
       displayName: inputData.displayName || user.displayName,
       photoURL: inputData.photoURL || user.photoURL,

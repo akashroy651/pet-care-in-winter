@@ -38,7 +38,7 @@ const VetsData = () => {
                 {vet.description}
               </p>
 
-              <button className="mt-3 w-max px-4 py-2 text-sm border rounded-lg hover:bg-blue-600 hover:text-white transition">
+              <button className="mt-3 w-max px-4 py-2 text-sm border rounded-lg hover:bg-blue-600 hover:text-white transition mx-auto">
                 Contact Now
               </button>
             </div>

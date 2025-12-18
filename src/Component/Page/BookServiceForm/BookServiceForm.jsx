@@ -8,11 +8,11 @@ const BookServiceForm = ({ onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    toast.success("✅ Booking Request Submitted!");
+    toast.success("Booking Request Submitted!");
 
     setName("");
     setEmail("");
-    onClose(); // modal close
+    onClose(); // modal close <//
   };
 
   return (
